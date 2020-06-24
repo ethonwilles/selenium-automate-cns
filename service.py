@@ -66,12 +66,12 @@ def creator(loc="",trip_price=0,desc_of_serv=""):
 
         
         try:
-            files = os.scandir("C:/Users/Ethon/Documents/Invoices")
+            files = os.scandir("C:/Users/Owner/Documents/Invoices")
             for item in files:
                 if item.name == f"Invoice for Alside {inv_num} {location}.docx":
                     print("Invoice already exists, skipping...")
                 else:
-                    document.save('C:/Users/Ethon/Documents/Invoices/'+f'Invoice for Alside {inv_num} {location}.docx')
+                    document.save('C:/Users/Owner/Documents/Invoices/'+f'Invoice for Alside {inv_num} {location}.docx')
             requests.post("https://cns-automate-backend.herokuapp.com/service-tracker", json={"num" : (new_inv_num + 1)})
                     
 

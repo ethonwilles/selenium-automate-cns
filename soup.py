@@ -18,7 +18,7 @@ def scrape(html):
         check_list = clean_list[0].split(" ")
         other_list = clean_list[1].split(" ")
         checker = True
-        for item in os.scandir("C:/Users/Ethon/Documents/Invoices"):
+        for item in os.scandir("C:/Users/Owner/Documents/Invoices"):
             if item.name[23:-5] == clean_list[0]:
                 checker = False
         if checker:
