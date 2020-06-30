@@ -47,9 +47,10 @@ class Driver():
         except:
             alside_btn = xpath('//*[@id="app"]/div/div[2]/div[1]/div[1]/div[1]/div[2]/div/div[1]/div/div[1]/div[10]/div')
             alside_btn.click()
-        sleep(5)
+        sleep(3)
         try:
             items = self.driver.find_elements_by_tag_name("div")
+            print(len(items))
             for item in items:
                 if str(item.text) == "Larry Thatcher":
                     item.click()
@@ -60,7 +61,7 @@ class Driver():
         except Exception as e:
             try:
                 sleep(5)
-                print(e)
+                print(e, ":::::::::::: this is an error in the exception part of __init__")
                 retry = xpath('//*[@id="app"]/div/div[2]/div[1]/div[1]/div[3]/div[2]/div/div[1]/div[2]/div/button')
                 retry.click()
                 items = self.driver.find_elements_by_tag_name("div")
